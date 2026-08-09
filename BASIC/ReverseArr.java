@@ -1,7 +1,9 @@
-void reverseArray(int arr[], int n) {
-    int start = 0, end = n - 1;
+public void reverseArray(int[] arr) {
+    int start = 0, end = arr.length - 1;
     while (start < end) {
-        swap(arr[start], arr[end]);
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
         start++;
         end--;
     }
