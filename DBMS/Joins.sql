@@ -63,3 +63,10 @@ LEFT JOIN sales s ON p.product_id = s.product_id
 WHERE s.product_id IS NULL;
 
   
+SELECT p.product_id, p.product_name
+FROM products p
+WHERE NOT EXISTS (
+    SELECT 1 
+    FROM sales s 
+    WHERE s.product_id = p.product_id
+);
