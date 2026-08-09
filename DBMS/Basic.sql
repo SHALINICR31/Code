@@ -7,7 +7,17 @@ WHERE name LIKE 'A_n%';
 The _ matches exactly one character (the second letter), and % matches zero or more characters after 'n'.
 
 
+It checks if the character at position 20 is 'n'.
+SELECT * FROM employees 
+WHERE name LIKE 'A%' 
+  AND SUBSTRING(name, 20, 1) = 'n';
 
+
+ tells the database to match exactly 18 characters between 'A' and 'n'.
+SELECT * FROM employees 
+WHERE name REGEXP '^A.{18}n';
+
+  
 3. Sorting Results
   
 How do you sort a product list by category alphabetically, and then by price from highest to lowest within each category?
